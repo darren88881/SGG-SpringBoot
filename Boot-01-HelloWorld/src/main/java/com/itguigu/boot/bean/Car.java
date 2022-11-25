@@ -1,16 +1,15 @@
 package com.itguigu.boot.bean;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
- * ConfigurationProperties:
+ * @Component // 加入到容器中
+ * @ConfigurationProperties:
  *     将配置文件中的配置的值赋上值
  *
  * @Author darren
  * @Date 2022/11/25 22:36
  */
-@Component
 @ConfigurationProperties(prefix = "mycar")
 public class Car {
     private String brand;
