@@ -1,6 +1,7 @@
 package com.itguigu.boot;
 
 import com.itguigu.boot.bean.Cat;
+import com.itguigu.boot.bean.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,6 +18,9 @@ public class MainApplication {
 
         Cat cat = run.getBean("cat", Cat.class);
         System.out.println(cat);
+
+        User user = run.getBean(User.class);
+        System.out.println(user);
 
     }
 }
