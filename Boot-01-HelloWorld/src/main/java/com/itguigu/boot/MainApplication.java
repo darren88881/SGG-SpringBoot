@@ -19,8 +19,8 @@ public class MainApplication {
         Cat cat = run.getBean("cat", Cat.class);
         System.out.println(cat);
 
-        User user = run.getBean(User.class);
-        System.out.println(user);
+        User user01 = run.getBean("user01",User.class);
+        System.out.println(user01);
 
     }
 }

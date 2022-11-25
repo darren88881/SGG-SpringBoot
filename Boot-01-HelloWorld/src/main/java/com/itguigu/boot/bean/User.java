@@ -8,6 +8,7 @@ package com.itguigu.boot.bean;
 public class User {
     private String name;
     private int age;
+    private Cat cat;
 
     public User() {
     }
@@ -32,12 +33,20 @@ public class User {
     public void setAge(final int age) {
         this.age = age;
     }
+    public Cat getCat() {
+        return cat;
+    }
+
+    public void setCat(final Cat cat) {
+        this.cat = cat;
+    }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", cat=" + cat +
                 '}';
     }
 }
