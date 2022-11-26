@@ -1,5 +1,9 @@
 package com.itguigu.boot.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -11,34 +15,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @Date 2022/11/25 22:36
  */
 @ConfigurationProperties(prefix = "mycar")
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Car {
     private String brand;
     private Integer price;
 
-    public Car() {
-    }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(final String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(final Integer price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }

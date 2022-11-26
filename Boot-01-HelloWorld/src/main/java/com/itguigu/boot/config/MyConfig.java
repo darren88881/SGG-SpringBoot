@@ -35,8 +35,7 @@ public class MyConfig {
     @ConditionalOnBean(name = "cat")
     @ConditionalOnMissingBean(name = "noCat")
     public User user(Cat cat){
-        User user = new User("张三", 18);
-        user.setCat(cat);
+        User user = new User("张三", 18, cat);
         return user;
     }
 }
