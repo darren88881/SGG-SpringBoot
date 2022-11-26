@@ -1,6 +1,7 @@
 package com.itguigu.boot.controller;
 
 import com.itguigu.boot.bean.Car;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2022/11/25 13:02
  */
 @RestController
+@Slf4j
 public class HelloController {
 
     @Autowired
@@ -23,6 +25,7 @@ public class HelloController {
 
     @RequestMapping("/car")
     public Car getCar(){
+        log.info("汽车日志！");
         return car;
     }
 }
