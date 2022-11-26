@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user_haha" class="com.itguigu.boot.bean.User">
+    <bean id="userHaha" class="com.itguigu.boot.bean.User">
         <property name="name" value="haha"/>
         <property name="age" value="19"/>
         <property name="cat" ref="cat_haha"/>

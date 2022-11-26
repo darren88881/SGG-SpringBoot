@@ -3,6 +3,7 @@ package com.itguigu.boot.config;
 import com.itguigu.boot.bean.Cat;
 import com.itguigu.boot.bean.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -25,13 +26,14 @@ public class MyConfig {
     }
 
     /**
-     * ConditionalOnBean：
-     *      条件装配，表示名为 cat 的对象存在则进行装配
-     *      也可以装配在类上
-     * @return
+     * 条件装配：也可以装配在类上
+     * ConditionalOnBean：表示名为 cat 的对象存在则进行装配
+     * ConditionalOnMissingBean:不存在则装配
+     * @return User
      */
     @Bean("user01")
     @ConditionalOnBean(name = "cat")
+    @ConditionalOnMissingBean(name = "noCat")
     public User user(Cat cat){
         User user = new User("张三", 18);
         user.setCat(cat);
