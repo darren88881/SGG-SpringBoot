@@ -1,22 +1,21 @@
 package com.itguigu.boot;
 
-import com.itguigu.boot.bean.Car;
 import com.itguigu.boot.bean.Cat;
 import com.itguigu.boot.bean.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
- *
- * @EnableConfigurationProperties：开启属性配置功能，并配置到容器
- *
+ * @SpringBootConfiguration : 配置类
+ * @EnableAutoConfiguration ：启用自动配置
+ *      @AutoConfigurationPackage ：将指定包下的所有组件导入进来
+ *      @Import                   ：给容器批量导入一些组件，按需自动装配
+ * @ComponentScan           ：包扫描
  * @Author darren
  * @Date 2022/11/25 13:00
  */
 @SpringBootApplication
-@EnableConfigurationProperties(Car.class)
 public class MainApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);

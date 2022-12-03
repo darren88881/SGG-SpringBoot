@@ -1,9 +1,11 @@
 package com.itguigu.boot.config;
 
+import com.itguigu.boot.bean.Car;
 import com.itguigu.boot.bean.Cat;
 import com.itguigu.boot.bean.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -12,12 +14,14 @@ import org.springframework.context.annotation.ImportResource;
 /**
  * 配置类，类似 spring.xml 配置的Bean
  * proxyBeanMethods : true 表示单例
+ * @EnableConfigurationProperties：开启属性配置功能，并配置到容器
  * @Author darren
  * @Date 2022/11/25 21:43
  */
 @Import({ User.class})
 @Configuration(proxyBeanMethods = false)
 @ImportResource("classpath:bean.xml")
+@EnableConfigurationProperties(Car.class)
 public class MyConfig {
 
     @Bean

@@ -1,6 +1,7 @@
 package com.itguigu.boot.controller;
 
 import com.itguigu.boot.bean.Car;
+import com.itguigu.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,9 @@ public class HelloController {
     @Autowired
     private Car car;
 
+    @Autowired
+    private Person mPerson;
+
     @RequestMapping("/hello")
     public String handle01(){
         return "HelloWorld";
@@ -27,5 +31,10 @@ public class HelloController {
     public Car getCar(){
         log.info("汽车日志！");
         return car;
+    }
+
+    @RequestMapping("/person")
+    public Person getPerson(){
+        return mPerson;
     }
 }
